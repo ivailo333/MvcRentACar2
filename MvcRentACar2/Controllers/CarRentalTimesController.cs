@@ -21,6 +21,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: CarRentalTimes
+        [Route("CarRentalTimes")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.CarRentalTime.ToListAsync());

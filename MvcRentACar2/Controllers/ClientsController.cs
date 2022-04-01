@@ -21,6 +21,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: Clients
+        [Route("Clients")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Clients.ToListAsync());
