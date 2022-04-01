@@ -21,7 +21,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: Employees
-        [Route("/Employees")]
+        [Route("Employees")]
         public async Task<IActionResult> Index()
         {
 
