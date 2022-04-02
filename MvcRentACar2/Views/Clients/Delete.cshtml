@@ -1,42 +1,42 @@
 ﻿@model MvcRentACar2.Models.Clients
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Изтриване";
 }
 
-<h1>Delete</h1>
+<h1 class="center">Изтриване</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Наистина ли искате да изтриете това?</h3>
 <div>
-    <h4>Clients</h4>
+    <h4>Клиенти</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fname)
+            Име
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Fname)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lname)
+            Фамилия
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Lname)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfBirth)
+            Дата на раждане
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DateOfBirth)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
+            Адрес
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Address)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
+            Телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Phone)
@@ -45,7 +45,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="ClientId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Изтрий" class="btn btn-danger" />
+        <a asp-action="Index">Обратно към списъка</a>
     </form>
 </div>

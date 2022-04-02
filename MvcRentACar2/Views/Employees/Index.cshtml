@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<MvcRentACar2.Models.Employees>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Служители";
 }
 
-<h1>Начало</h1>
+<h1 class="center">Служители</h1>
 
 <p>
-    <a asp-action="Create">Създай на нов служител</a>
+    <a asp-action="Create">Създай нов</a>
 </p>
 <table class="table">
     <thead>
@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Редактиране</a>
+                <a asp-action="Details" asp-route-id="@item.EmployeeId">Детайли</a>
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Изтриване</a>
             </td>
         </tr>
 }

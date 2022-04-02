@@ -1,61 +1,61 @@
 ﻿@model MvcRentACar2.Models.Cars
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Създаване";
 }
 
-<h1>Create</h1>
+<h1 class="center">Създаване</h1>
 
-<h4>Cars</h4>
+<h4>Коли</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Marka" class="control-label"></label>
+                <label asp-for="Marka" class="control-label">Марка</label>
                 <input asp-for="Marka" class="form-control" />
                 <span asp-validation-for="Marka" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RegNumber" class="control-label"></label>
+                <label asp-for="RegNumber" class="control-label">Регистрационен номер на колата</label>
                 <input asp-for="RegNumber" class="form-control" />
                 <span asp-validation-for="RegNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ClientId" class="control-label"></label>
+                <label asp-for="ClientId" class="control-label">Клиент</label>
                 <input asp-for="ClientId" class="form-control" />
                 <span asp-validation-for="ClientId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RentCar" class="control-label"></label>
+                <label asp-for="RentCar" class="control-label">Дата и час на отдаване на колата под наем</label>
                 <input asp-for="RentCar" class="form-control" />
                 <span asp-validation-for="RentCar" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Km" class="control-label"></label>
+                <label asp-for="Km" class="control-label">Изминати километри</label>
                 <input asp-for="Km" class="form-control" />
                 <span asp-validation-for="Km" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label"></label>
+                <label asp-for="EmployeeId" class="control-label">Служител</label>
                 <input asp-for="EmployeeId" class="form-control" />
                 <span asp-validation-for="EmployeeId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label asp-for="Price" class="control-label">Цена на услугата</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Създай" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Обратно към списъка</a>
 </div>
 
 @section Scripts {

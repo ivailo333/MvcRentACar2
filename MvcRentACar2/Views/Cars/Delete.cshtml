@@ -1,54 +1,54 @@
 ﻿@model MvcRentACar2.Models.Cars
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Изтриване";
 }
 
-<h1>Delete</h1>
+<h1 class="center">Изтриване</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Наистина ли искате да изтриете това?</h3>
 <div>
-    <h4>Cars</h4>
+    <h4>Коли</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Marka)
+            Марка
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Marka)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RegNumber)
+            Регистрационен номер на колата
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.RegNumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClientId)
+            Клиент
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ClientId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RentCar)
+            Дата и час на отдаване на колата под наем
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.RentCar)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Km)
+            Изминати километри
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Km)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EmployeeId)
+            Служител
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.EmployeeId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
+            Цена на услугата
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Price)
@@ -57,7 +57,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="CarId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Изтрий" class="btn btn-danger" />
+        <a asp-action="Index">Обратно към списъка</a>
     </form>
 </div>

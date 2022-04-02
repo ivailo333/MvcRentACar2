@@ -1,41 +1,41 @@
 ﻿@model MvcRentACar2.Models.Clients
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Детайли";
 }
 
-<h1>Details</h1>
+<h1 class="center">Детайли</h1>
 
 <div>
-    <h4>Clients</h4>
+    <h4>Клиенти</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fname)
+            Име
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Fname)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Lname)
+            Фамилия
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Lname)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateOfBirth)
+            Дата на раждане
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DateOfBirth)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
+            Адрес
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Address)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Phone)
+            Телефон
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Phone)
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ClientId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ClientId">Редактиране</a>
+    <a asp-action="Index">Обратно към списъка</a>
 </div>
