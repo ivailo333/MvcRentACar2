@@ -24,9 +24,15 @@ namespace MvcRentACar2.Controllers
         // GET: CarRentalTimes
         [Authorize]
         [Route("CarRentalTimes")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.CarRentalTime.ToListAsync());
+            var carrentaltimes = from crt in _context.CarRentalTime
+                       select crt;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                carrentaltimes = carrentaltimes.Where(s => s.ClientId.ToString().Contains(searchString));
+            }
+            return View(await carrentaltimes.ToListAsync());
         }
 
         // GET: CarRentalTimes/Details/5

@@ -24,9 +24,15 @@ namespace MvcRentACar2.Controllers
         // GET: Clients
         [Authorize]
         [Route("Clients")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Clients.ToListAsync());
+        var clients = from cl in _context.Clients
+                        select cl;
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                clients = clients.Where(s => s.Lname!.Contains(searchString));
+            }
+            return View(await clients.ToListAsync());
         }
 
         // GET: Clients/Details/5

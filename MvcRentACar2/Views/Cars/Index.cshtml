@@ -9,6 +9,12 @@
 <p>
     <a asp-action="Create">Създаване на нова</a>
 </p>
+<form asp-controller="Cars" asp-action="Index">
+    <p>
+        Марка: <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
