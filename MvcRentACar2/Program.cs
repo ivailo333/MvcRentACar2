@@ -1,7 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcRentACar2.Data;
+using Auth0.AspNetCore.Authentication;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuth0WebAppAuthentication(options =>
+{
+    options.Domain = builder.Configuration["Auth0:Domain"];
+    options.ClientId = builder.Configuration["Auth0:ClientId"];
+    options.Scope = "openid profile email";
+});
 
 builder.Services.AddDbContext<MvcRentACar2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MvcRentACar2Context")));
@@ -24,6 +35,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

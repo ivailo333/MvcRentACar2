@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcRentACar2.Data;
@@ -21,6 +22,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: Cars
+        [Authorize]
         [Route("Cars")]
         public async Task<IActionResult> Index()
         {
