@@ -30,8 +30,8 @@ namespace MvcRentACar2.Controllers
             await HttpContext.SignOutAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         }
-		
-		[Authorize]
+	
+	[Authorize]
         public IActionResult Profile()
         {
             return View(new UserProfileViewModel()
