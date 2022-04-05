@@ -4,35 +4,23 @@
     ViewData["Title"] = "Детайли";
 }
 
-<h1 class="center">Детайли</h1>
+<h1>Детайли</h1>
 
 <div>
-    <h4>Час за наемане на колата под наем"</h4>
+    <h4>Дата и час на взимане и връщане</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            Клиент
+            Име и фамилия
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClientId)
-        </dd>
-        <dt class = "col-sm-2">
-            Служител
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmployeeId)
+            @Html.DisplayFor(model => model.FullName)
         </dd>
         <dt class = "col-sm-2">
             Дата и час
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.DateTime1)
-        </dd>
-        <dt class = "col-sm-2">
-            Продължителност
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Duration)
         </dd>
     </dl>
 </div>

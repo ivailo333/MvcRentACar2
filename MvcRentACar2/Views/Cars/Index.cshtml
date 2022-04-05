@@ -4,37 +4,28 @@
     ViewData["Title"] = "Коли";
 }
 
-<h1 class="center">Коли</h1>
+<h1>Коли</h1>
 
 <p>
-    <a asp-action="Create">Създаване на нова</a>
+    <a asp-action="Create">Създаване на нов</a>
 </p>
-<form asp-controller="Cars" asp-action="Index">
-    <p>
-        Марка: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Марка на колата
+                Марка
             </th>
             <th>
-                Регистрационен номер на колата
+                Град
             </th>
             <th>
-                Клиент
+                Дата и час на взимане
             </th>
             <th>
-                 Дата и час на отдаване на колата под наем
+                Дата и час на връщане
             </th>
             <th>
-                 Изминати километри
-            </th>
-            <th>
-                Служител
+                Ограничени километри
             </th>
             <th>
                 Цена на услугата
@@ -46,22 +37,19 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Marka)
+               <a asp-controller="CarRentalTimes" asp-action="Index"> @Html.DisplayFor(modelItem => item.Marka)</a>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RegNumber)
+                @Html.DisplayFor(modelItem => item.City)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ClientId)
+                @Html.DisplayFor(modelItem => item.RentCar1)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentCar)
+                @Html.DisplayFor(modelItem => item.RentCar2)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Km)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)

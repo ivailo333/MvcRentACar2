@@ -15,10 +15,6 @@ namespace MvcRentACar2.Data
         {
         }
 
-        public DbSet<MvcRentACar2.Models.Employees> Employees { get; set; }
-
-        public DbSet<MvcRentACar2.Models.Clients> Clients { get; set; }
-
         public DbSet<MvcRentACar2.Models.Cars> Cars { get; set; }
 
         public DbSet<MvcRentACar2.Models.CarRentalTime> CarRentalTime { get; set; }

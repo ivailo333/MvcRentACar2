@@ -16,21 +16,18 @@ namespace MvcRentACar2.Models
         public string Marka { get; set; }
 
         [StringLength(11,MinimumLength = 9)]
-        [RegularExpression(@"^[A-Z]+[\x20][0-9]{4,6}*[\x20][A-Z]{2}*$")]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9\s]*$")]
         [Required]
-        public string RegNumber { get; set; }
+        public string City { get; set; }
 
         [Required]
-        public int ClientId { get; set; }
+        public DateTime RentCar1 { get; set; }
 
         [Required]
-        public DateTime RentCar { get; set; }
+        public DateTime RentCar2 { get; set; }
 
         [Required]
         public int Km { get; set; }
-
-        [Required]
-        public int EmployeeId { get; set; }
 
         [Range(1,100)]
         [DataType(DataType.Currency)]

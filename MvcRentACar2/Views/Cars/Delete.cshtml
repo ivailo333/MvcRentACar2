@@ -4,11 +4,11 @@
     ViewData["Title"] = "Изтриване";
 }
 
-<h1 class="center">Изтриване</h1>
+<h1>Изтриване</h1>
 
 <h3>Наистина ли искате да изтриете това?</h3>
 <div>
-    <h4>Коли</h4>
+    <h4>Cars</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -18,34 +18,28 @@
             @Html.DisplayFor(model => model.Marka)
         </dd>
         <dt class = "col-sm-2">
-            Регистрационен номер на колата
+            Град
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RegNumber)
+            @Html.DisplayFor(model => model.City)
         </dd>
         <dt class = "col-sm-2">
-            Клиент
+            Дата и час на взимане
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClientId)
+            @Html.DisplayFor(model => model.RentCar1)
         </dd>
         <dt class = "col-sm-2">
-            Дата и час на отдаване на колата под наем
+            Дата и час на връщане
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RentCar)
+            @Html.DisplayFor(model => model.RentCar2)
         </dd>
         <dt class = "col-sm-2">
-            Изминати километри
+            Ограничени километри
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Km)
-        </dd>
-        <dt class = "col-sm-2">
-            Служител
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EmployeeId)
         </dd>
         <dt class = "col-sm-2">
             Цена на услугата

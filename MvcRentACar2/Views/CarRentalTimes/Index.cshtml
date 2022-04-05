@@ -1,52 +1,33 @@
 ﻿@model IEnumerable<MvcRentACar2.Models.CarRentalTime>
 
 @{
-    ViewData["Title"] = "Час за наемане на колата под наем";
+    ViewData["Title"] = "Дата и час на взимане и връщане";
 }
 
-<h1 class="center">Час за наемане на колата под наем</h1>
+<h1>Дата и час на взимане и връщане</h1>
 
 <p>
     <a asp-action="Create">Създаване на нов</a>
 </p>
-<form asp-controller="CarRentalTimes" asp-action="Index">
-    <p>
-        Клиентски номер: <input type="text" name="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
-</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Клиент
-            </th>
-            <th>
-                Служител
+                Име и фамилия
             </th>
             <th>
                 Дата и час
             </th>
-            <th>
-                Продължителност
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ClientId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeId)
+                @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateTime1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Редактиране</a>

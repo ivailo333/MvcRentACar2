@@ -4,9 +4,9 @@
     ViewData["Title"] = "Редактиране";
 }
 
-<h1 class="center">Редактиране</h1>
+<h1>Редактиране</h1>
 
-<h4>Час за наемане на колата под наем"</h4>
+<h4>Дата и час на взимане и връщане</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,24 +14,14 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="ClientId" class="control-label">Клиент</label>
-                <input asp-for="ClientId" class="form-control" />
-                <span asp-validation-for="ClientId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label">Служител</label>
-                <input asp-for="EmployeeId" class="form-control" />
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                <label asp-for="FullName" class="control-label">Име и фамилия</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DateTime1" class="control-label">Дата и час</label>
                 <input asp-for="DateTime1" class="form-control" />
                 <span asp-validation-for="DateTime1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Duration" class="control-label">Продължителност</label>
-                <input asp-for="Duration" class="form-control" />
-                <span asp-validation-for="Duration" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Запиши" class="btn btn-primary" />

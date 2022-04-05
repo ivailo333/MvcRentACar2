@@ -4,7 +4,7 @@
     ViewData["Title"] = "Създаване";
 }
 
-<h1 class="center">Създаване</h1>
+<h1>Създаване</h1>
 
 <h4>Коли</h4>
 <hr />
@@ -18,29 +18,24 @@
                 <span asp-validation-for="Marka" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RegNumber" class="control-label">Регистрационен номер на колата</label>
-                <input asp-for="RegNumber" class="form-control" />
-                <span asp-validation-for="RegNumber" class="text-danger"></span>
+                <label asp-for="City" class="control-label">Град</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ClientId" class="control-label">Клиент</label>
-                <input asp-for="ClientId" class="form-control" />
-                <span asp-validation-for="ClientId" class="text-danger"></span>
+                <label asp-for="RentCar1" class="control-label">Дата и час на взимане</label>
+                <input asp-for="RentCar1" class="form-control" />
+                <span asp-validation-for="RentCar1" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RentCar" class="control-label">Дата и час на отдаване на колата под наем</label>
-                <input asp-for="RentCar" class="form-control" />
-                <span asp-validation-for="RentCar" class="text-danger"></span>
+                <label asp-for="RentCar2" class="control-label">Дата и час на връщане</label>
+                <input asp-for="RentCar2" class="form-control" />
+                <span asp-validation-for="RentCar2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Km" class="control-label">Изминати километри</label>
+                <label asp-for="Km" class="control-label">Ограничени километри</label>
                 <input asp-for="Km" class="form-control" />
                 <span asp-validation-for="Km" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EmployeeId" class="control-label">Служител</label>
-                <input asp-for="EmployeeId" class="form-control" />
-                <span asp-validation-for="EmployeeId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Price" class="control-label">Цена на услугата</label>

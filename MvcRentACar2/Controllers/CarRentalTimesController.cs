@@ -12,6 +12,7 @@ using MvcRentACar2.Models;
 
 namespace MvcRentACar2.Controllers
 {
+    [Authorize]
     public class CarRentalTimesController : Controller
     {
         private readonly MvcRentACar2Context _context;
@@ -22,20 +23,15 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: CarRentalTimes
-        [Authorize]
+        [Authorize(Roles = "Admin, Employee")]
         [Route("CarRentalTimes")]
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index()
         {
-            var carrentaltimes = from crt in _context.CarRentalTime
-                       select crt;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                carrentaltimes = carrentaltimes.Where(s => s.ClientId.ToString().Contains(searchString));
-            }
-            return View(await carrentaltimes.ToListAsync());
+            return View(await _context.CarRentalTime.ToListAsync());
         }
 
         // GET: CarRentalTimes/Details/5
+        [Authorize(Roles = "Admin, Employee")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,6 +50,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: CarRentalTimes/Create
+        [Authorize(Roles = "Admin, Employee")]
         public IActionResult Create()
         {
             return View();
@@ -64,7 +61,8 @@ namespace MvcRentACar2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClientId,EmployeeId,DateTime1,Duration")] CarRentalTime carRentalTime)
+        [Authorize(Roles = "Admin, Employee")]
+        public async Task<IActionResult> Create([Bind("Id,FullName,DateTime1,Duration")] CarRentalTime carRentalTime)
         {
             if (ModelState.IsValid)
             {
@@ -76,6 +74,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: CarRentalTimes/Edit/5
+        [Authorize(Roles = "Admin, Employee")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,7 +95,8 @@ namespace MvcRentACar2.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,ClientId,EmployeeId,DateTime1,Duration")] CarRentalTime carRentalTime)
+        [Authorize(Roles = "Admin, Employee")]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,DateTime1,Duration")] CarRentalTime carRentalTime)
         {
             if (id != carRentalTime.Id)
             {
@@ -127,6 +127,7 @@ namespace MvcRentACar2.Controllers
         }
 
         // GET: CarRentalTimes/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,6 +148,7 @@ namespace MvcRentACar2.Controllers
         // POST: CarRentalTimes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var carRentalTime = await _context.CarRentalTime.FindAsync(id);
