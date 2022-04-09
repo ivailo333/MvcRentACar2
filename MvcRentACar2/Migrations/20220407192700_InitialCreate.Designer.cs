@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MvcRentACar2.Data;
 
@@ -10,9 +11,10 @@ using MvcRentACar2.Data;
 namespace MvcRentACar2.Migrations
 {
     [DbContext(typeof(MvcRentACar2Context))]
-    partial class MvcRentACar2ContextModelSnapshot : ModelSnapshot
+    [Migration("20220407192700_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,7 @@ namespace MvcRentACar2.Migrations
 
                     b.Property<string>("Marka")
                         .IsRequired()
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");

@@ -1,13 +1,80 @@
-﻿@{
+﻿@model MvcRentACar2.Models.Cars
+
+
+@{
     ViewData["Title"] = "Начало";
 }
 
 <div class="text-center">
     <h1 class="display-4">Система "Кола под наем"</h1>
-    <p>
+    <p style="font-size: 30px;">
         Автоматизирана система за отдаване на коли под наем
     </p>
-    <!--
-         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    --> 
+</div>
+<div class="center">
+    <form asp-action="search">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="container">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Marka" class="control-label"></label>
+                        <select asp-for="Marka" class="form-control"></select>
+                        <span asp-validation-for="Marka" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="CarModel" class="control-label"></label>
+                        <select asp-for="CarModel" class="form-control" asp-items="Html.GetEnumSelectList<Model>()"></select>
+                        <span asp-validation-for="CarModel" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Transmission" class="control-label"></label>
+                        <select asp-for="Transmission" class="form-control" asp-items="Html.GetEnumSelectList<Transmission>()"></select>
+                        <span asp-validation-for="Transmission" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="CountSeat" class="control-label"></label>
+                        <select asp-for="CountSeat" class="form-control" asp-items="Html.GetEnumSelectList<SeatCount>()"></select>
+                        <span asp-validation-for="CountSeat" class="text-danger"></span>
+                    </div>
+                    <div class="col-4">
+                        <label id="MininalPrice" class="control-label">Минимална цена</label><br />
+                        <input type="number" class="form-control" id="min" name="min" value="" />
+                    </div>
+                    <div class="col-4">
+                        <label id="MaximalPrice" class="control-label">Максимална цена</label><br />
+                        <input type="number" class="form-control" id="max" name="max" value="" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-check">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4 align-items-center">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="AirConditioning" />@Html.DisplayNameFor(model=>model.AirConditioning)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4 align-items-center">
+                        <input type="submit" value="Търси" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+
+<div>
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
 </div>

@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using MvcRentACar2.Data;
 using MvcRentACar2.Models;
 using System.Diagnostics;
+using System.Linq;
 
 namespace MvcRentACar2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly MvcRentACar2Context _mvcRentACar2Context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(MvcRentACar2Context mvcRentACar2Context)
         {
-            _logger = logger;
+            _mvcRentACar2Context = mvcRentACar2Context;
         }
 
         public IActionResult Index()

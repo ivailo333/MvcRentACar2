@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 
@@ -10,29 +10,92 @@ namespace MvcRentACar2.Models
         [Key]
         public int CarId { get; set; }
 
-        [StringLength(40,MinimumLength = 5)]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9\s]*$")]
-        [Required]
-        public string Marka { get; set; }
+        [DisplayName("Марка")]
+        public int Marka { get; set; }
 
-        [StringLength(11,MinimumLength = 9)]
-        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9\s]*$")]
-        [Required]
-        public string City { get; set; }
+        [DisplayName("Модел")]
+        public Model CarModel { get; set; }
 
-        [Required]
-        public DateTime RentCar1 { get; set; }
+        [DisplayName("Град")]
+        public Cities City { get; set; }
 
-        [Required]
-        public DateTime RentCar2 { get; set; }
+        [DisplayName("Брой места")]
+        public SeatCount CountSeat { get; set; }
 
-        [Required]
-        public int Km { get; set; }
+        [DisplayName("Скоростна кутия")]
+        public Transmission Transmission { get; set; }
 
-        [Range(1,100)]
-        [DataType(DataType.Currency)]
-        [Column(TypeName = "decimal(18,2)")]
-        [Required]
-        public decimal Price { get; set; }
+        [DisplayName("Климатик")]
+        public bool AirConditioning { get; set; }
+
+        [DisplayName("Цена на ден")]
+        public int Price { get; set; }
+
+        [DisplayName("Брой коли")]
+        public int CarCount { get; set; }
     }
+
+
+    public enum Model
+    {
+        Седан,
+        Хечбек,
+        Лифтбек,
+        Комби,
+        Купе,
+        Кабриолет,
+        Лимузина,
+        SUV,
+        Кросоувър,
+        Миниван,
+        ван,
+        Пекап,
+        Джип
+    }
+    public enum Transmission
+    {
+        Автоматична,
+        Ръчна
+    }
+
+    public enum SeatCount
+    {
+        Две=2,
+        Пет=5,
+        Седем=7,
+        Осем=8
+    }
+
+    public enum Cities
+    {
+        Благоевград,
+        Бургас,
+        Варна,
+        Велико_Търново,
+        Видин,
+        Враца,
+        Габрово,
+        Добрич,
+        Кърджали,
+        Кюстендил,
+        Ловеч,
+        Монтана,
+        Пазарджик,
+        Перник,
+        Плевен,
+        Пловдив,
+        Разград,
+        Русе,
+        Силистра,
+        Сливен,
+        Смолян,
+        Софийска,
+        София,
+        Стара_Загора,
+        Търговище,
+        Хасково,
+        Шумен,
+        Ямбол
+    }
+
 }

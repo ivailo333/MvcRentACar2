@@ -1,34 +1,40 @@
 ﻿@model IEnumerable<MvcRentACar2.Models.Cars>
 
 @{
-    ViewData["Title"] = "Коли";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Коли</h1>
+<h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Създаване на нов</a>
+    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                Марка
+                @Html.DisplayNameFor(model => model.Marka)
             </th>
             <th>
-                Град
+                @Html.DisplayNameFor(model => model.CarModel)
             </th>
             <th>
-                Дата и час на взимане
+                @Html.DisplayNameFor(model => model.City)
             </th>
             <th>
-                Дата и час на връщане
+                @Html.DisplayNameFor(model => model.CountSeat)
             </th>
             <th>
-                Ограничени километри
+                @Html.DisplayNameFor(model => model.Transmission)
             </th>
             <th>
-                Цена на услугата
+                @Html.DisplayNameFor(model => model.AirConditioning)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarCount)
             </th>
             <th></th>
         </tr>
@@ -37,27 +43,33 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-               <a asp-controller="CarRentalTimes" asp-action="Index"> @Html.DisplayFor(modelItem => item.Marka)</a>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentCar1)
+                @Html.DisplayFor(modelItem => item.CountSeat)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentCar2)
+                @Html.DisplayFor(modelItem => item.Transmission)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Km)
+                @Html.DisplayFor(modelItem => item.AirConditioning)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CarId">Редактиране</a>
-                <a asp-action="Details" asp-route-id="@item.CarId">Детайли</a>
-                <a asp-action="Delete" asp-route-id="@item.CarId">Изтриване</a>
+                @Html.DisplayFor(modelItem => item.CarCount)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CarId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CarId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CarId">Delete</a>
             </td>
         </tr>
 }
