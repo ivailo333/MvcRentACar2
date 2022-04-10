@@ -14,7 +14,7 @@ namespace MvcRentACar2.Migrations
                 {
                     CarId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Marka = table.Column<int>(type: "int", nullable: false),
+                    Marka = table.Column<string>(type: "nvarchar(MAX)", nullable: false),
                     CarModel = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<int>(type: "int", nullable: false),
                     CountSeat = table.Column<int>(type: "int", nullable: false),

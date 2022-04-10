@@ -11,7 +11,7 @@ namespace MvcRentACar2.Models
         public int CarId { get; set; }
 
         [DisplayName("Марка")]
-        public int Marka { get; set; }
+        public string Marka { get; set; }
 
         [DisplayName("Модел")]
         public Model CarModel { get; set; }

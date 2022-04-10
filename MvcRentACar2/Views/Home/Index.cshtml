@@ -12,15 +12,18 @@
     </p>
 </div>
 <div class="center">
-    <form asp-action="search">
+    <form asp-controller="Home" asp-action="Index">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="container">
             <div class="form-group">
                 <div class="row">
                     <div class="col-4">
                         <label asp-for="Marka" class="control-label"></label>
-                        <select asp-for="Marka" class="form-control"></select>
+                        <input asp-for="Marka" class="form-control" />
                         <span asp-validation-for="Marka" class="text-danger"></span>
+                        <!--
+                             <select asp-for="Marka" class="form-control"></select>
+                        -->
                     </div>
                     <div class="col-4">
                         <label asp-for="CarModel" class="control-label"></label>
@@ -73,8 +76,10 @@
 </div>
 
 <div>
-    <div class="left">
-    </div>
-    <div class="right">
-    </div>
+    <form asp-controller="Home" asp-action="Search">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+    </form>
 </div>
