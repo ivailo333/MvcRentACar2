@@ -1,13 +1,13 @@
 ﻿@model MvcRentACar2.Models.Cars
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Детайли";
 }
 
-<h1>Details</h1>
+<h1>Детайли</h1>
 
 <div>
-    <h4>Cars</h4>
+    <h4>Коли</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -61,6 +61,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.CarId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.CarId">Редактиране</a>
+    <a asp-action="Index">Обратно към списъка</a>
 </div>
